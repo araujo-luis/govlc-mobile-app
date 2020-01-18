@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoVLC.Views.AboutPage"
+             
+             Title="{Binding Title}">
+    
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatible with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="GoVLC" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Esta aplicación fue desarrollada utilizando en Framework Xamarin " />
+                                <Span Text=" " />
+                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
+                                <Span Text=". Es un proyecto para la clase Dispositivos Móviles y Realidad Aumentada del máster Tecnologías Web, Computación en la Nube y Aplicaciones Móviles de la Universidad de Valencia 2018-2019" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="GoVLC muestra un listado de todos lo monumentos turísticos de Valencia" />
+                                
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

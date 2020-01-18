@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="GoVLC.Views.VisitFormPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="checkmark.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Planea tu visita">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="13, 0">
+                        <Label Text="Fecha:" VerticalOptions="Center"></Label>
+                        <DatePicker HorizontalOptions="EndAndExpand" Date="{Binding VisitDate}" MinimumDate="{x:Static sys:DateTime.Today}" x:Name="datePicker"></DatePicker>
+                        <TimePicker x:Name="timePicker" Time="{Binding VisitDate.TimeOfDay, Mode=TwoWay}" ></TimePicker>
+                        
+                        
+                    </StackLayout>
+                    
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="13, 0" HeightRequest="100">
+                        <Label Text="Descripción:" VerticalOptions="Center"></Label>
+                        <Editor x:Name="description" Text="{Binding Description}" AutoSize="TextChanges" Keyboard="Chat" VerticalOptions="FillAndExpand" HeightRequest="100" />
+                    </StackLayout>
+                </ViewCell>
+
+
+            </TableSection>
+        </TableRoot>
+    </TableView>
+    <ContentPage.Content>
+        <StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

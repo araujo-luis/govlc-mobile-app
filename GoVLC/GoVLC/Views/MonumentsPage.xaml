@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoVLC.Views.MonumentsPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+  
+
+    <StackLayout>
+        <SearchBar Placeholder="Búsqueda" TextChanged="SearchBar_TextChanged" ></SearchBar>
+        
+        <ListView x:Name="monumentsList"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            <Image Source="{Binding Imagen}" Opacity="0.5" />
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Nombre}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                            <Label Text="{Binding Categoria}" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="12" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

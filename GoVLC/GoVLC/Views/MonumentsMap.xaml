@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:local="clr-namespace:GoVLC;assembly=GoVLC"
+             xmlns:local1="clr-namespace:GoVLC.Models"
+             x:Class="GoVLC.Views.MonumentsMap">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="filter" Title="Filtro" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Todos</x:String>
+                    <x:String>Iglesia</x:String>
+                    <x:String>Mercado</x:String>
+                    <x:String>Palacio</x:String>
+                    <x:String>Banco</x:String>
+                    <x:String>Monumento Histórico</x:String>
+                    <x:String>Escuela</x:String>
+                    <x:String>Museos</x:String>
+                </Picker.Items>
+            </Picker>
+            <local1:CustomMap x:Name="map" MapType="Street"  
+                          />
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

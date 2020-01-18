@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoVLC.Views.MonumentDetailPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:local1="clr-namespace:GoVLC.Models"
+             Title="{Binding Title}"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="visit.png" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Icon="picture.png" Clicked="ToolbarItem_Clicked_1"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+    <ScrollView>
+    <StackLayout Spacing="20" Padding="15">
+                <Image Source="{Binding Image.Images[0]}"/>
+                <Label Text="Nombre:" FontSize="Medium" />
+        <Label Text="{Binding Nombre}" FontSize="Small"/>
+        <Label Text="Dirección:" x:Name="labelAddress" FontSize="Medium" IsVisible="False" />
+        <Label Text="{Binding Address.FullAddress}" x:Name="labelFullAddress" IsVisible="False" FontSize="Small"/>
+                <!-- 
+
+                <Image x:Name="PhotoImage"></Image>
+                <Button x:Name="CamaraButton" Text="Take Photo" Clicked="CamaraButton_Clicked"></Button>-->
+        <StackLayout VerticalOptions="Center">
+            <ListView x:Name="listView" HeightRequest="48" HasUnevenRows="True" VerticalOptions="FillAndExpand"  IsVisible="False" ItemSelected="ListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <TextCell Text="{Binding Telefono}" >
+
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView> 
+        </StackLayout>
+        <!--<Label Text="Telefono:" FontSize="Medium" />
+        <Label Text="{Binding Telefono}" FontSize="Small"/>-->
+        <maps:Map
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            x:Name="map"
+            HeightRequest="300"
+            IsShowingUser="True"
+            MapType="Street">
+            
+        </maps:Map>
+
+              
+            </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

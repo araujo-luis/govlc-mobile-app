@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoVLC.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <Color x:Key="BodyTextColor">#FFFFFF</Color>
+
+            <!--  font families  -->
+            <OnPlatform
+                x:Key="RegularFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif"
+                iOS="HelveticaNeue" />
+            <OnPlatform
+                x:Key="LightFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif-light"
+                iOS="HelveticaNeue-Light" />
+            <OnPlatform
+                x:Key="MediumFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif-medium"
+                iOS="HelveticaNeue-Medium" />
+            <OnPlatform
+                x:Key="BoldFontFamily"
+                x:TypeArguments="x:String"
+                Android="sans-serif-medium"
+                iOS="HelveticaNeue-Bold" />
+
+            <!--  fonts 
+            <Font
+                x:Key="TitleFont"
+                FontFamily="{StaticResource BoldFontFamily}"
+                FontSize="20" />
+            <Font
+                x:Key="HandleFont"
+                FontFamily="{StaticResource BoldFontFamily}"
+                FontSize="12" />
+            <Font
+                x:Key="BodyFont"
+                FontFamily="{StaticResource LightFontFamily}"
+                FontSize="12" /> -->
+
+            <x:Double x:Key="TitleFont">30</x:Double>
+            <x:Double x:Key="HandleFont">12</x:Double>
+            <x:Double x:Key="BodyFont">12</x:Double>
+
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="Font" Value="{StaticResource TitleFont}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="HandleLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="Font" Value="{StaticResource HandleFont}" />
+                
+            </Style>
+
+            <Style x:Key="BodyLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="Font" Value="{StaticResource BodyFont}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

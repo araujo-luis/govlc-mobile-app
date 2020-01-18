@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoVLC.Views.GalleryPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="camera.png" Clicked="ToolbarItem_Clicked"/>
+        
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <ListView x:Name="imagesLista"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                >
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            
+                            <MenuItem Text="Compartir" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout Padding="10" Orientation="Horizontal">
+                            
+                            
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Image Source="{Binding Images}"/>
+                                
+                                
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
